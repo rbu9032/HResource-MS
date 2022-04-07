@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="text-center">
+          <h1>Login</h1>
+          <h6>Please Enter Email and Password</h6>
+        </div>
+          <form [formGroup]="loginform" (ngSubmit)="login()">
+            <div  class="form-group mb-3">
+              <label for="emailid">Email ID</label>
+              <input type="email" class="form-control" id="emailid" formControlName="myemail">
+              <small style="color:red" *ngIf="myemail.invalid && myemail.touched">*EMAIL ID IS REQUIRED</small>
+            </div>
+            <div class="form-group mb-3">
+              <label for="pwd">Password</label>
+              <input type="password" class="form-control" id="pwd" formControlName="pwd">
+             <div *ngIf="pwd.invalid && pwd.touched">
+                     <small style="color:red" *ngIf="pwd.errors.required">*PASSWORD IS REQUIRED</small>
+                     <small style="color:red" *ngIf="pwd.errors.minlength">*PASSWORD SHOULD BE MINIMUM 8 CHARACTERS</small>
+             </div> 
+            </div>
+           <div class="text-center">
+            <button type="submit" class="bg-success" [disabled]="loginform.invalid" style="color: #ffff;">Login</button>
+          </div>
+          <br> 
+          </form>
+       <br>
+      </div>
+  
+  </div>
+</div>
+
