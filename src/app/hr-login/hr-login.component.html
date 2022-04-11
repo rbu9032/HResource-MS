@@ -19,15 +19,20 @@
                      <small style="color:red" *ngIf="pwd.errors.required">*PASSWORD IS REQUIRED</small>
                      <small style="color:red" *ngIf="pwd.errors.minlength">*PASSWORD SHOULD BE MINIMUM 8 CHARACTERS</small>
              </div> 
-            </div>
-           <div class="text-center">
-            <button type="submit" class="bg-success" [disabled]="loginform.invalid" style="color: #ffff;">Login</button>
+             <br> 
+            <div class="text-center">
+            <button type="submit" class="bg-success" [disabled]="loginform.invalid" routerLink="/login" style="color: #ffff;">Login</button></div>
           </div>
-          <br> 
+         
+           <div class="text-center" style="color: red;">
+             {{Message}}
+           </div>
+           <a style="color: #ffff;"  routerLink="/home">Back</a>
           </form>
        <br>
+      
       </div>
-  
+    </div>
   </div>
 </div>
 

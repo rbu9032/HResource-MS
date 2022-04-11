@@ -1,0 +1,33 @@
+
+  <div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="text-center">
+          <h1>Unique Id</h1>
+          
+        </div>
+          <form [formGroup]="nextform" (ngSubmit)="next()">
+            <div  class="form-group mb-3">
+              <label for="uid">Unique ID</label>
+              <input type="uid" class="form-control" id="uid" formControlName="uid">
+              <div *ngIf="uid.invalid && uid.touched">
+                <small style="color:red" *ngIf="uid.errors.required">*Unique Id is Required</small>
+                 <small style="color:red" *ngIf="uid.errors.minlength">*Unique Id should not be more than 4 </small>
+              </div>
+            </div>
+          
+            <div class="text-end">
+            <button type="submit" class="bg-primary" [disabled]="nextform.invalid" routerLink="/intern" style="color: #ffff;">Next</button>
+          </div>
+         
+
+           <a style="color: black;"  routerLink="/home">Back</a>
+          </form>
+       
+      
+      </div>
+    </div>
+  </div>
+
+

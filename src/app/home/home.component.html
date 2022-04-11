@@ -1,13 +1,61 @@
-<div class="container">
-  <div class="app" >
-    
-    <hr class="my-5">
+
+<!--<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" style="color: #ffff;">HRMS</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" style="color: #ffff;" routerLink="/home">Home</a>
+        <a class="nav-link" style="color: #ffff;" routerLink="/hrlogin">HR</a>
+        <a class="nav-link" style="color: #ffff;" routerLink="/intern">INTERN</a>
+      </div>
+    </div>
   </div>
+</nav>-->
+<nav class="navbar navbar-light bg-primary fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" style="color: #ffff;">HRMS</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">HRMS</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/hrlogin">HR</a>
+            <a class="nav-link" routerLink="/popup">INTERN</a>
+          </li>    
+            </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="../assets/data/social-sharing-hrms.jpg" class="d-block w-100" alt=" image loading..." height="620px">
+    </div>
+    
+  </div>
+</div>
 
+<div>
 
-<!--<div class="form-inline my-8 my-lg-9">
- <button class="btn btn-primary" type="button" [routerLink]="['/hrlogin']">HR Login</button>&nbsp;&nbsp;
-  <button class="btn btn-primary" type="button" [routerLink]="['/intern']">INTERN</button>
-</div>--> 
+<footer class="page-footer font-small special-color-dark pt-4 bg-dark text-center text-white"> 
+  
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.319);">
+    © 2022 Copyright:
+    <p>Human Resource Management System</p>
+    
+
+  </div>
+  
+</footer>
 
 </div>
