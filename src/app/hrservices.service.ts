@@ -5,9 +5,23 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class HrservicesService {
-  url:string="http://localhost:9001/api/";
+  url:string="http://localhost:9002/api/";
   constructor(private http:HttpClient) { }
-  getEmployees() {
-    return this.http.get(this.url+"getallemployees");
+  
+  getIntern() {
+    return this.http.get(this.url+"learner");
      }
+     storeData(intern:any){
+      console.log(intern);
+     return  this.http.post(this.url+"save",intern,{responseType:'text'});
+    }
+
+    updateData(interns:any){
+      console.log(interns);
+      return this.http.put(this.url+"update",interns,{responseType:'text'});
+    }
+    deleteData(interrns:any){
+      console.log(interrns);
+      return this.http.put(this.url+"delete",interrns,{responseType:'text'});
+    }
 }

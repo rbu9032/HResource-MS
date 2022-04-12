@@ -12,3 +12,7 @@
     background: rgb(85, 116, 19);
     background: linear-gradient(90deg, rgb(184, 186, 189) 0%, rgb(165, 104, 189) 100% );
 }
+
+.error{
+    color: red;
+}

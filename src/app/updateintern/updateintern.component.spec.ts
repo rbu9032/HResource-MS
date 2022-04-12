@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InternpopupComponent } from './internpopup.component';
+import { UpdateinternComponent } from './updateintern.component';
 
-describe('InternpopupComponent', () => {
-  let component: InternpopupComponent;
-  let fixture: ComponentFixture<InternpopupComponent>;
+describe('UpdateinternComponent', () => {
+  let component: UpdateinternComponent;
+  let fixture: ComponentFixture<UpdateinternComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ InternpopupComponent ]
+      declarations: [ UpdateinternComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InternpopupComponent);
+    fixture = TestBed.createComponent(UpdateinternComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

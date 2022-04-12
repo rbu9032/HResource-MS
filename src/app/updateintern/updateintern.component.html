@@ -1,81 +1,39 @@
-<!--<div class="container mt-5">
-  <div class="card">
-  <form class="content" [formGroup]="registerForm" (ngSubmit)="submitData()">
-      <h1 class="text-center">Register Form</h1>
-          <div class="row">
-      <div class=" mt-2 mb-2 col-1g-6 col-6">
-        <label for="fname">First Name</label>
-          <input type="text" class="form-control" id="fname" formControlName="fname">
-          <small style="color:red" *ngIf="fname.invalid && fname.touched">*First Name is Required</small>
-      </div>
-
-      
-      <div class=" mt-2 mb-2col-1g-6 col-6">
-        <label for="lname">Last Name</label>
-        <input type="text" class="form-control" id="lname" formControlName="lname">
-        <small style="color:red" *ngIf="lname.invalid && lname.touched">*Last Name is Required</small>
-      </div>
-     
-      <div class=" mt-2 mb-2col-1g-12 col-12">
-        <label for="emailid">Email ID</label>
-        <input type="email" class="form-control" id="emailid" formControlName="myemail">
-        <small style="color:red" *ngIf="myemail.invalid && myemail.touched">*EMAIL ID IS REQUIRED</small>
-      </div>
-
-     
-      <div class=" mt-2 mb-2col-1g-12 col-12">
-        <label for="mobile">Mobile.No</label>
-        <input type="number" class="form-control" id="mobile" formControlName="mobile">
-        <div *ngIf="mobile.touched && mobile.invalid">
-          <small style="color:red" *ngIf="mobile.errors.required">*Mobile Number Required</small><br/>
-          <small style="color:red" *ngIf="mobile.errors.pattern">*Only Numbers are allowed</small>
-            </div>
-      </div>
-      <div class="form-group">
-        <label for="pwd">Password</label>
-        <input type="password" class="form-control" id="pwd" formControlName="pwd">
-           <div *ngIf="pwd.invalid && pwd.touched">
-                   <small style="color:red" *ngIf="pwd.errors.required">*Password  Required</small>
-                   <small style="color:red" *ngIf="pwd.errors.minlength">*Password should be minimum 8 characters</small>
-           </div> 
-      </div>
-      
-      <div class="text-center">
-        <br>
-        <button class="bg-success" [disabled]="registerForm.invalid">Submit</button>
-      </div>
-    </div>
-  </form>
-</div>
-</div>-->
 <div class="container mt-5">
   <div class="card">
   <form #myform="ngForm">
-      <h1 class="text-center">REGISTER HERE</h1>
+      <h1 class="text-center">Update Intern</h1>
           <div class="row">
 
-            <div class=" mt-2 mb-2col-1g-12 col-12">
+            <!--<div class=" mt-2 mb-2col-1g-12 col-12">
               <div class="form-group">
                 <label for="lid">UNIQUE ID</label>
                 <input type="text" #n1="ngModel" class="form-control" id="lid"  ngModel name="lid" required>
                 <div *ngIf="n1.touched && n1.invalid">
                     <small *ngIf="n1.errors.required" class="error">*UNIQUE ID is Required</small>    
-                </div>  
+                </div> 
               </div>
-                </div>
+                </div>-->
 
-      <div class=" mt-2 mb-2 col-1g-12 col-12">
+      <!--<div class=" mt-2 mb-2 col-1g-6 col-6">
         <div class="form-group">
           <label for="fname">Name</label>
           <input type="text" #n2="ngModel" class="form-control" id="fname"  ngModel name="fname" required>
           <div *ngIf="n2.touched && n2.invalid">
               <small *ngIf="n2.errors.required" class="error">*First Name is Required</small>    
-          </div>  
+          </div>
         </div>
       </div>
 
       
-      
+      <div class=" mt-2 mb-2col-1g-6 col-6">
+        <div class="form-group">
+          <label for="surname">Last Name</label>
+          <input type="text" #n3="ngModel" class="form-control" id="surname"  ngModel name="surname" required>
+          <div *ngIf="n3.touched && n3.invalid">
+              <small *ngIf="n3.errors.required" class="error">*Sur Name is Required</small>    
+          </div>  
+        </div>
+      </div>
      
       <div class=" mt-2 mb-2col-1g-12 col-12">
         <div class="form-group">
@@ -85,7 +43,7 @@
               <small *ngIf="n4.errors.required" class="error">*Email is Required</small>    
           </div>  
         </div>
-      </div>
+      </div>-->
 
          <div class=" mt-2 mb-2col-1g-12 col-12">
           <div class="form-group">
@@ -96,11 +54,11 @@
             </div>
             </div>
          </div>
-         <div class=" mt-2 mb-2 col-1g-6 col-6">
+        <!-- <div class=" mt-2 mb-2 col-1g-6 col-6">
           <div class="form-group">
             <label for="city">City</label>
             <input type="text" #n6="ngModel" class="form-control" id="city"  ngModel name="city" required>
-            <div *ngIf="n6.touched && n6.invalid">
+           <div *ngIf="n6.touched && n6.invalid">
                 <small *ngIf="n6.errors.required" class="error">*City is Required</small>    
             </div>
             </div>
@@ -111,9 +69,9 @@
                 <input type="text" #n7="ngModel" class="form-control" id="domain"  ngModel name="domain" required>
                 <div *ngIf="n7.touched && n7.invalid">
                     <small *ngIf="n7.errors.required" class="error">Domain is Required</small>    
-                </div>
-            </div>
-            </div>
+                </div>-->   
+            
+            
             <div class=" mt-2 mb-2col-1g-12 col-12">
               <div class="form-group">
                 <label for="salary">Salary</label>
@@ -126,14 +84,14 @@
             </div>
        <div class="text-center">
         <br>
-        <input type="submit" class="btn btn-primary" [disabled]="myform.invalid" value="Register" (click)="store(myform)">
+        <input type="submit" class="btn btn-primary"  value="Update" (click)="update(myform)">
       </div>
       <br>
-      <a style="color: #ffff;"  routerLink="/home">Back</a>
       <div class="alert alert-success text-center" role="alert" *ngIf="flag">
         {{msg}}
       </div>
     </div>
+    <a style="color: #ffff;"  routerLink="/login">Back</a>
   </form>
 </div>
 </div>

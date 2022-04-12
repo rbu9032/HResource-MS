@@ -10,9 +10,11 @@ import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { InternpopupComponent } from './internpopup/internpopup.component';
+
 import { ViewallinternsComponent } from './viewallinterns/viewallinterns.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import {  HttpClientModule } from '@angular/common/http';
+import { UpdateinternComponent } from './updateintern/updateintern.component';
+import { DeleteinternComponent } from './deleteintern/deleteintern.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +25,10 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     AboutComponent,
     LoginComponent,
     DashboardComponent,
-    InternpopupComponent,
-    ViewallinternsComponent
+   
+    ViewallinternsComponent,
+    UpdateinternComponent,
+    DeleteinternComponent
   ],
   imports: [
     BrowserModule,

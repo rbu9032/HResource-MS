@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { HrservicesService } from '../hrservices.service';
+import { Intern } from './intern';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-internlogin',
@@ -7,46 +10,38 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./internlogin.component.css']
 })
 export class InternloginComponent {
+  myform:NgForm;
+lid:number;
+fname:string="";
 
-  registerForm:FormGroup;
-  successMessage:string;
-  failMessage:string;
-  constructor(){
-    this.registerForm=new FormGroup({
-      fname:new FormControl("",[Validators.required]),
-      lname:new FormControl("",[Validators.required]),
-      myemail:new FormControl("",[Validators.required]),
-      mobile:new FormControl("",[Validators.required,Validators.pattern('[0-9]+')]),
-       pwd:new FormControl("",[Validators.required,Validators.minLength(8)])
+emailid:string="";
+mobile:number;
+city:string="";
+domain:string="";
+salary:number;
+intern:Intern;
+msg:string="";
+flag:boolean=false;
+constructor(private hrservice:HrservicesService){}
 
-    });
-  }
-  get fname(){
-    return this.registerForm.get('fname');
-  }
-  get lname(){
-    return this.registerForm.get('lname');
-  }
-  get myemail(){
-    return this.registerForm.get('myemail');
-  }
-  get mobile(){
-    return this.registerForm.get('mobile');
-  }
-
-  get pwd(){
-   return this.registerForm.get('pwd');
- }
-
- submitData(){
-   alert('successfully login....');
-   console.log(this.registerForm.value.fname);
-   console.log(this.registerForm.value.lname);
-   console.log(this.registerForm.value.myemail); 
-   console.log(this.registerForm.value.mobile);
-   console.log(this.registerForm.value.pwd);
-   
-   this.registerForm.reset();
- }
+store(data){
+  console.log(data.value);
+  this.lid=data.value.lid;
+  this.fname=data.value.fname;
+ 
+  this.emailid=data.value.emailid;
+  this.mobile=data.value.mobile;
+  this.city=data.value.city;
+  this.domain=data.value.domain;
+  this.salary=data.value.salary;
+  this.intern=new Intern(this.lid,this.fname, this.emailid,this.mobile,this.city,this.domain,this.salary);
+  this.hrservice.storeData(this.intern).subscribe(data=>{
+    console.log(data)
+     this.msg=data;
+     this.flag=true;
+    
+  })
+  
+}
 }
 
