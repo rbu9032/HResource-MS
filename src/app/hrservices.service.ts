@@ -20,8 +20,8 @@ export class HrservicesService {
       console.log(interns);
       return this.http.put(this.url+"update",interns,{responseType:'text'});
     }
-    deleteData(interrns:any){
-      console.log(interrns);
-      return this.http.put(this.url+"delete",interrns,{responseType:'text'});
+    deleteData(mobile){
+      console.log(mobile);
+      return this.http.delete(this.url+"removelearner/"+mobile,{responseType:'text'});
     }
 }

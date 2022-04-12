@@ -67,17 +67,14 @@
       <div class=" mt-2 mb-2 col-1g-12 col-12">
         <div class="form-group">
           <label for="fname">Name</label>
-          <input type="text" #n2="ngModel" class="form-control" id="fname"  ngModel name="fname" required>
-          <div *ngIf="n2.touched && n2.invalid">
-              <small *ngIf="n2.errors.required" class="error">*First Name is Required</small>    
+          <input type="text" #n2="ngModel" class="form-control" id="fname"  ngModel name="fname" required   pattern="[a-zA-Z]{20}">
+          <div *ngIf="(n2.dirty ||n2.touched) && n2.invalid"> 
+              <small *ngIf="n2.errors.pattern" class="error">*Maximum length is 20</small>
+              <small *ngIf="n2.errors.required" class="error">*Name is Required</small>
           </div>  
         </div>
       </div>
-
-      
-      
-     
-      <div class=" mt-2 mb-2col-1g-12 col-12">
+ <div class=" mt-2 mb-2col-1g-12 col-12">
         <div class="form-group">
           <label for="emailid">Email Id</label>
           <input type="text" #n4="ngModel" class="form-control" id="emailid"  ngModel name="emailid" required>

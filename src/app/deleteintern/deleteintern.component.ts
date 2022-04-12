@@ -17,9 +17,9 @@ export class DeleteinternComponent  {
 delete(data){
   console.log(data.value);
   this.mobile=data.value.mobile;
-  this.interrns=new Intern(this.mobile)
-  this.hrservice.deleteData(this.interrns).subscribe(data=>{
-    this.msg=data;
+  
+  this.hrservice.deleteData(this.mobile).subscribe(data=>{
+   
    this.flag=true;
   })
 
