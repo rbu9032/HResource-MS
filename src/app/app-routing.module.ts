@@ -11,6 +11,7 @@ import { HrLoginComponent } from './hr-login/hr-login.component';
 import { InternloginComponent } from './internlogin/internlogin.component';
 
 import { LoginComponent } from './login/login.component';
+import { SearchinternComponent } from './searchintern/searchintern.component';
 import { UpdateinternComponent } from './updateintern/updateintern.component';
 import { ViewallinternsComponent } from './viewallinterns/viewallinterns.component';
 
@@ -23,7 +24,8 @@ const routes: Routes = [
 {path: "dashboard", component:DashboardComponent},
 {path:"intern",component:InternloginComponent},
 {path:"updateintern", component:UpdateinternComponent},
-{path:"deleteintern", component:DeleteinternComponent}];
+{path:"deleteintern", component:DeleteinternComponent},
+{path: "search", component:SearchinternComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

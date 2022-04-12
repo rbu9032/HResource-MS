@@ -11,9 +11,8 @@ import { NgForm } from '@angular/forms';
 })
 export class InternloginComponent {
   myform:NgForm;
-lid:number;
-fname:string="";
 
+fname:string="";
 emailid:string="";
 mobile:number;
 city:string="";
@@ -26,15 +25,13 @@ constructor(private hrservice:HrservicesService){}
 
 store(data){
   console.log(data.value);
-  this.lid=data.value.lid;
   this.fname=data.value.fname;
- 
   this.emailid=data.value.emailid;
   this.mobile=data.value.mobile;
   this.city=data.value.city;
   this.domain=data.value.domain;
   this.salary=data.value.salary;
-  this.intern=new Intern(this.lid,this.fname, this.emailid,this.mobile,this.city,this.domain,this.salary);
+  this.intern=new Intern(this.fname, this.emailid,this.mobile,this.city,this.domain,this.salary);
   this.hrservice.storeData(this.intern).subscribe(data=>{
     console.log(data)
      this.msg=data;

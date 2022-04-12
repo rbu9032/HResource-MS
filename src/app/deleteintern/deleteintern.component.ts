@@ -19,7 +19,7 @@ delete(data){
   this.mobile=data.value.mobile;
   
   this.hrservice.deleteData(this.mobile).subscribe(data=>{
-   
+   this.msg=data;
    this.flag=true;
   })
 

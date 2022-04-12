@@ -54,27 +54,17 @@
       <h1 class="text-center">REGISTER HERE</h1>
           <div class="row">
 
-            <div class=" mt-2 mb-2col-1g-12 col-12">
-              <div class="form-group">
-                <label for="lid">UNIQUE ID</label>
-                <input type="text" #n1="ngModel" class="form-control" id="lid"  ngModel name="lid" required>
-                <div *ngIf="n1.touched && n1.invalid">
-                    <small *ngIf="n1.errors.required" class="error">*UNIQUE ID is Required</small>    
-                </div>  
-              </div>
-                </div>
-
       <div class=" mt-2 mb-2 col-1g-12 col-12">
         <div class="form-group">
           <label for="fname">Name</label>
-          <input type="text" #n2="ngModel" class="form-control" id="fname"  ngModel name="fname" required   pattern="[a-zA-Z]{20}">
-          <div *ngIf="(n2.dirty ||n2.touched) && n2.invalid"> 
-              <small *ngIf="n2.errors.pattern" class="error">*Maximum length is 20</small>
-              <small *ngIf="n2.errors.required" class="error">*Name is Required</small>
-          </div>  
+          <input type="text" #n2="ngModel" class="form-control" id="fname"  ngModel name="fname" required   minimum="8">
+          <div *ngIf="n2.touched && n2.invalid">
+            <small *ngIf="n2.errors.required" class="error">*NAME is Required</small>
+            <small *ngIf="n2.errors.minlength" class="error">*Minimum 8 Characters  Required</small>
         </div>
       </div>
- <div class=" mt-2 mb-2col-1g-12 col-12">
+      </div>
+        <div class=" mt-2 mb-2col-1g-12 col-12">
         <div class="form-group">
           <label for="emailid">Email Id</label>
           <input type="text" #n4="ngModel" class="form-control" id="emailid"  ngModel name="emailid" required>

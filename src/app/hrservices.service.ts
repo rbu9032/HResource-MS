@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, Type } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -23,5 +23,9 @@ export class HrservicesService {
     deleteData(mobile){
       console.log(mobile);
       return this.http.delete(this.url+"removelearner/"+mobile,{responseType:'text'});
+    }
+    searchData(mobile){
+      console.log(mobile);
+        return this.http.get(this.url+"getlearner/"+mobile,{responseType:'text'});
     }
 }

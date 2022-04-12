@@ -15,6 +15,7 @@ import { ViewallinternsComponent } from './viewallinterns/viewallinterns.compone
 import {  HttpClientModule } from '@angular/common/http';
 import { UpdateinternComponent } from './updateintern/updateintern.component';
 import { DeleteinternComponent } from './deleteintern/deleteintern.component';
+import { SearchinternComponent } from './searchintern/searchintern.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { DeleteinternComponent } from './deleteintern/deleteintern.component';
    
     ViewallinternsComponent,
     UpdateinternComponent,
-    DeleteinternComponent
+    DeleteinternComponent,
+    SearchinternComponent
   ],
   imports: [
     BrowserModule,

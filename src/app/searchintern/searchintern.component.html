@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="text-center">
+            <h1>Enter Mobile Number </h1>
+            
+          </div>
+          <form #myform="ngForm">
+              <div  class="form-group mb-3">
+                <div class="form-group">
+                  <label for="mobile"></label>
+                  <input type="text" #n1="ngModel" class="form-control" id="mobile"  ngModel name="mobile" required>
+                  <div *ngIf="n1.touched && n1.invalid">
+                      <small *ngIf="n1.errors.required" class="error">*Mobile Number is Required</small>    
+                  </div>  
+                </div>
+                  </div>
+              
+            
+              <div class="text-end">
+                <input type="submit" class="btn btn-primary" [disabled]="myform.invalid" value="Search" (click)="search(myform)">
+            </div>
+           
+  
+             <a style="color: black;"  routerLink="/learner">Back</a>
+  
+  
+             <div class="alert alert-success text-center" role="alert" *ngIf="flag">
+              {{msg}}
+            </div>
+  
+        </form>
+      </div>
+        
+        </div>
+      </div>
+    </div>
+    <br>
+    

@@ -1,12 +1,9 @@
-<!-- As a heading -->
-<nav class="navbar navbar-light bg-success">
-  <div class="container-fluid">
-    <span class="navbar-brand mb-0 h1" style="color: #fff;">HRMS</span>
+<div class="panel panel-primary">
+  <div class="panel-heading text-center">
+    <h2>Intern List</h2>
   </div>
-</nav>
-<div class="content">
-  <table class="table table-dark table-sm">
-  <tr>
+  <table class="table table-dark table-sm mt-3">
+  <tr class="table-dark">
     <td>Unique ID</td>
     <td>Name</td>
     <td>Email</td>
@@ -14,8 +11,9 @@
     <td>City</td>
     <td>Domain</td>
     <td>Salary</td>
+    <td>Action</td>
   </tr>
-  <tr *ngFor="let intern of  interns">
+  <tr class="table-info" *ngFor="let intern of  interns">
     <td>{{ intern.lid}}</td>
     <td>{{intern.name}}</td>
     <td>{{intern.email}}</td>
@@ -23,35 +21,11 @@
     <td>{{intern.city}}</td>
     <td>{{intern.domain}}</td>
     <td>{{intern.salary}}</td>
+    <td>
+      <button class="btn btn-info" routerLink="/updateintern">Update</button>
+      <button class="btn btn-danger mx-3" routerLink="/deleteintern">Delete</button>
+    </td>
   </tr>
+  
 </table>
-</div>
-<a style="color: black;"  routerLink="/login">Back</a>
-<!--<div class="container">
-  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top bg-dark">
-    <div class="col-md-4 d-flex align-items-center">
-      <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-        <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
-      </a>
-      <span class="text-muted">&copy; 2021 Company, Inc</span>
-    </div>
-
-    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-      <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"/></svg></a></li>
-      <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"/></svg></a></li>
-      <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"/></svg></a></li>
-    </ul>
-  </footer>
-</div>-->
-<div class="container">
-<footer class="page-footer font-small special-color-dark pt-4 bg-primary text-center text-white"> 
-  
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.319);">
-    © 2022 Copyright:
-    <p>Human Resource Management System</p>
-    
-
-  </div>
-  
-</footer>
 </div>

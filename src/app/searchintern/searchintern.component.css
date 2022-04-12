@@ -1,0 +1,21 @@
+.card{
+    display: flex;
+    margin-top: 25px;
+    margin-left: 540px;
+    border: none;
+    width: 500px;
+    padding: 40px;
+    position:absolute;
+    top: 50px;
+    left: 50px;
+    transform: translate(-50px, 50px);
+    background: rgb(85, 116, 19);
+    background: linear-gradient(90deg, rgb(184, 186, 189) 0%, rgb(165, 104, 189) 100% );
+}
+
+.error{
+    color: red;
+}
+.container{
+    margin-top: auto;
+}
