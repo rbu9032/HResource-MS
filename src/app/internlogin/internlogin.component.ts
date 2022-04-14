@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { HrservicesService } from '../hrservices.service';
 import { Intern } from './intern';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-internlogin',
@@ -21,9 +22,9 @@ salary:number;
 intern:Intern;
 msg:string="";
 flag:boolean=false;
-constructor(private hrservice:HrservicesService){}
+constructor(private hrservice:HrservicesService, private router: Router){}
 
-store(data){
+store(data:any){
   console.log(data.value);
   this.fname=data.value.fname;
   this.emailid=data.value.emailid;
@@ -32,11 +33,12 @@ store(data){
   this.domain=data.value.domain;
   this.salary=data.value.salary;
   this.intern=new Intern(this.fname, this.emailid,this.mobile,this.city,this.domain,this.salary);
-  this.hrservice.storeData(this.intern).subscribe(data=>{
-    console.log(data)
-     this.msg=data;
+  this.hrservice.storeData(this.intern).subscribe(res=>{
+   data.form.reset();
+     this.msg=res;
      this.flag=true;
-    
+     
+   
   })
   
 }

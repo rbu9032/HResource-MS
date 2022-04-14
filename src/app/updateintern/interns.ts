@@ -4,5 +4,7 @@ export class Intern{
     constructor(mobile, salary){
         this.mobile=mobile;
         this.salary=salary;
+    
+
     }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { HrservicesService } from '../hrservices.service';
 
 
@@ -9,7 +10,7 @@ import { HrservicesService } from '../hrservices.service';
   styleUrls: ['./searchintern.component.css']
 })
 export class SearchinternComponent {
- 
+ myform:NgForm;
   mobile:number;
   msg:string="";
   flag:boolean=false;
@@ -18,9 +19,8 @@ export class SearchinternComponent {
     console.log(data.value);
     this.mobile=data.value.mobile;
     this.hrservice.searchData(this.mobile).subscribe(data=>{
-      this.msg=data;
       this.flag=true;
-    
+      this.myform.reset();
      })
    }
   

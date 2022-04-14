@@ -6,27 +6,24 @@
           <h1>Login</h1>
           <h6>Please Enter Email and Password</h6>
         </div>
-          <form [formGroup]="loginform" (ngSubmit)="login()">
+          <form [formGroup]="myform" (ngSubmit)="loginApp()">
             <div  class="form-group mb-3">
-              <label for="emailid">Email ID</label>
-              <input type="email" class="form-control" id="emailid" formControlName="myemail">
-              <small style="color:red" *ngIf="myemail.invalid && myemail.touched">*EMAIL ID IS REQUIRED</small>
+              <label for="email">Email ID</label>
+              <input type="email" class="form-control" id="email" formControlName="email">
+              <div *ngIf="myform.controls.email.touched && myform.controls.email.invalid">
+                <small *ngIf="myform.controls.email.errors.required" style="color:red">Email is Required</small>
+            </div>
             </div>
             <div class="form-group mb-3">
               <label for="pwd">Password</label>
               <input type="password" class="form-control" id="pwd" formControlName="pwd">
-             <div *ngIf="pwd.invalid && pwd.touched">
-                     <small style="color:red" *ngIf="pwd.errors.required">*PASSWORD IS REQUIRED</small>
-                     <small style="color:red" *ngIf="pwd.errors.minlength">*PASSWORD SHOULD BE MINIMUM 8 CHARACTERS</small>
-             </div> 
+              <div *ngIf="myform.controls.pwd.touched && myform.controls.pwd.invalid">
+                <small *ngIf="myform.controls.pwd.errors.required" style="color:red">Password is Required</small>
+            </div>
              <br> 
             <div class="text-center">
-            <button type="submit" class="bg-success" [disabled]="loginform.invalid" routerLink="/login" style="color: #ffff;">Login</button></div>
+            <button type="submit" class="bg-success" [disabled]="myform.invalid" style="color: #ffff;">Login</button></div>
           </div>
-         
-           <div class="text-center" style="color: red;">
-             {{Message}}
-           </div>
            <a style="color: #ffff;"  routerLink="/home">Back</a>
           </form>
        <br>

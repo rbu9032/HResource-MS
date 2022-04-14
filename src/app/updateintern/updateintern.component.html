@@ -22,10 +22,10 @@
               <small *ngIf="n2.errors.required" class="error">*First Name is Required</small>    
           </div>
         </div>
-      </div>
+      </div>-->
 
       
-      <div class=" mt-2 mb-2col-1g-6 col-6">
+      <!--<div class=" mt-2 mb-2col-1g-6 col-6">
         <div class="form-group">
           <label for="surname">Last Name</label>
           <input type="text" #n3="ngModel" class="form-control" id="surname"  ngModel name="surname" required>
@@ -33,9 +33,9 @@
               <small *ngIf="n3.errors.required" class="error">*Sur Name is Required</small>    
           </div>  
         </div>
-      </div>
+      </div>-->
      
-      <div class=" mt-2 mb-2col-1g-12 col-12">
+      <!--<div class=" mt-2 mb-2col-1g-12 col-12">
         <div class="form-group">
           <label for="emailid">Email Id</label>
           <input type="text" #n4="ngModel" class="form-control" id="emailid"  ngModel name="emailid" required>
@@ -48,13 +48,13 @@
          <div class=" mt-2 mb-2col-1g-12 col-12">
           <div class="form-group">
             <label for="mobile">Mobile</label>
-            <input type="text" #n5="ngModel" class="form-control" id="mobile"  ngModel name="mobile" required>
+            <input type="text" #n5="ngModel" class="form-control" id="mobile"  ngModel name="mobile" value="(intern.mobile)" required>
             <div *ngIf="n5.touched && n5.invalid">
                 <small *ngIf="n5.errors.required" class="error">*Mobile Number is Required</small>    
             </div>
             </div>
          </div>
-        <!-- <div class=" mt-2 mb-2 col-1g-6 col-6">
+        <!--<div class=" mt-2 mb-2 col-1g-6 col-6">
           <div class="form-group">
             <label for="city">City</label>
             <input type="text" #n6="ngModel" class="form-control" id="city"  ngModel name="city" required>
@@ -69,7 +69,7 @@
                 <input type="text" #n7="ngModel" class="form-control" id="domain"  ngModel name="domain" required>
                 <div *ngIf="n7.touched && n7.invalid">
                     <small *ngIf="n7.errors.required" class="error">Domain is Required</small>    
-                </div>-->   
+                </div> --> 
             
             
             <div class=" mt-2 mb-2col-1g-12 col-12">
@@ -91,9 +91,62 @@
         {{msg}}
       </div>
     </div>
-    <a style="color: #ffff;"  routerLink="/learner">Back</a>
+    
   </form>
 </div>
 
 </div>
-  
+<!--<div class="card">
+<h3 class="text-center">
+  Update Intern
+</h3>
+  <form [formGroup]="myform" (ngSubmit)="onSubmit()">
+<div class="form-group">
+  <label for="domain">Domain</label>
+  <input type="text"   class="form-control" id="domain" [(ngModel)]="domain" name="domain">
+  <div *ngIf="myform.touched && myform.invalid">
+    <small *ngIf="myform.errors.required" class="error">*UNIQUE ID is Required</small>    
+</div> 
+
+</div>
+<div class="form-group">
+  <label for="sly">Salary</label>
+  <input type="text" class="form-control" id="sly" [(ngModel)]="sly" name="sly">
+
+</div>
+<br>
+<div class="text-center">
+<button style='margin-right:16px'  class="btn btn-success">Submit</button>
+</div>
+</form>-->
+<!--<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="text-center">
+          <h3>Update Intern</h3>
+        </div>
+          <form [formGroup]="myform" (ngSubmit)="onSubmit()">
+            <div  class="form-group mb-3">
+              <label for="mb-lg-0">Mobile</label>
+              <input type="mbl " class="form-control" id="mbl" formControlName="domain">
+            </div>
+            <div class="form-group mb-3">
+              <label for="sly">Salary</label>
+              <input type="number" class="form-control" id="sly" formControlName="sly">
+              <div *ngIf="myform.controls.sly.touched && myform.controls.sly.invalid">
+                <small *ngIf="myform.controls.sly.errors.required" style="color:red">Password is Required</small>
+            </div>
+             <br> 
+            <div class="text-center">
+            <button type="submit" class="bg-success" [disabled]="myform.invalid" style="color: #ffff;">Login</button>
+            <button style='margin-right:16px'  [disabled]="myform.invalid" class="btn btn-success">Submit</button>
+            </div>
+          </div>
+          </form>
+       <br>
+      
+      </div>
+    </div>
+  </div>
+</div>-->

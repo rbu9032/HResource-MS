@@ -1,22 +1,21 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { HrservicesService } from './hrservices.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate  {
-loginform: any;
-
-
-constructor(private router: Router){}
-  
-canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
-  if(this.loginform.value.myemail=='abc@gmail.com' && this.loginform.value.pwd=='123456789'){
-    return true;
+export class AuthGuard implements CanActivate {
+  constructor(private hr:HrservicesService,private  route:Router){}
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot):boolean {
+      if(!this.hr.isLoggedIn()){
+        this.route.navigate(['login']);
+        return false;
+      }
+    return this.hr.isLoggedIn();
   }
-  this.router.navigate(['']);
-  return false;
 }
 
-}
